@@ -21,20 +21,15 @@ const App: React.FC = () => {
   //   setData(result);
   // };
 
-
   const gettApi = async () => {
     const url = "https://jsonplaceholder.typicode.com/posts";
-    // try {
-      let response = await fetch(url);
-      let posts = await response.json();
-      const postsWithAvatar = posts.map(post => ({
-        ...post,
-        avatar: require('./assets/images.jpg')
-      }));
-      setData(postsWithAvatar);
-    // } catch (error) {
-      // console.error("Failed to fetch posts:", error);
-    // }
+    let response = await fetch(url);
+    let posts = await response.json();
+    const postsWithAvatar = posts.map(post => ({
+      ...post,
+      avatar: require('./assets/images.jpg')
+    }));
+    setData(postsWithAvatar);
   };
 
   useEffect(() => {
@@ -45,15 +40,44 @@ const App: React.FC = () => {
     <ScrollView>
       <Text>App</Text>
       {data.length ? data.map((item) =>
-        <View key={item.id}>
-          <Image style={{ height: 100, width: 100, }} source={item.avatar} />
-          <Text>{item.title}</Text>
-          <Text>{item.body}</Text>
-
+        <View key={item.id} style={{
+          backgroundColor: '#fff',
+          flex: 1,
+          flexDirection: 'row',
+          margin: 10,
+          padding: 20,
+          borderWidth: 1,
+          borderColor: '#ddd',
+          borderRadius: 8,
+          shadowColor: "#000",
+          elevation: 14,
+          gap: 20
+        }}>
+          <Image style={{
+            height: 100,
+            width: 100,
+            borderRadius: 50,
+          }} source={item.avatar} />
+          <View style={{ flex: 1, flexDirection: 'column' }}>
+            <Text numberOfLines={1} style={{
+              color: 'black',
+              fontWeight: 'bold',
+              fontSize: 16,
+              marginBottom: 5,
+            }}>{item.title}</Text>
+            <Text numberOfLines={4} style={{
+              color: 'gray',
+            }}>{item.body}</Text>
+          </View>
         </View>)
         :
-        <Text>No Data Found</Text>}
+        <Text style={{
+          textAlign: 'center',
+          margin: 20,
+          color: 'gray',
+        }}>No Data Found</Text>}
     </ScrollView>
+
   );
 };
 
