@@ -10,8 +10,9 @@ import React, { useEffect, useMemo, useState } from 'react';
 
 interface Post {
   id?: number;
-  title?: string;
-  body?: string;
+  name?: string;
+  age?: string;
+  email?: any;
   avatar?: any;
 }
 
@@ -21,7 +22,7 @@ const App: React.FC = () => {
 
   const gettApi = async () => {
     setIsLoading(true);
-    const url = 'https://jsonplaceholder.typicode.com/posts';
+    const url = 'http://192.168.1.3:8000/user';
     let response = await fetch(url);
     let posts = await response.json();
     const postsWithAvatar = posts.map((post: Post) => ({
@@ -58,7 +59,7 @@ const App: React.FC = () => {
             }}
             source={item.avatar}
           />
-          <View style={{ flex: 1, flexDirection: 'column' }}>
+          <View style={{flex: 1, flexDirection: 'column'}}>
             <Text
               numberOfLines={1}
               style={{
@@ -67,42 +68,58 @@ const App: React.FC = () => {
                 fontSize: 16,
                 marginBottom: 5,
               }}>
-              {item.title}
+              {item.name}
             </Text>
             <Text
               numberOfLines={4}
               style={{
                 color: 'gray',
               }}>
-              {item.body}
+              {item.age}
+            </Text>
+            <Text
+              numberOfLines={4}
+              style={{
+                color: 'gray',
+              }}>
+              {item.email}
             </Text>
           </View>
         </View>
       ))
     ) : (
-      <Text
+      <View
         style={{
-          textAlign: 'center',
-          margin: 20,
-          color: 'gray',
+          flex: 1,
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 10,
         }}>
-        No Data Found
-      </Text>
+        <Text
+          style={{
+            marginHorizontal: 20,
+            marginTop: '70%',
+            color: 'red',
+            fontSize: 30,
+          }}>
+          No Data Found
+        </Text>
+        <ActivityIndicator size={30} color={'red'} />
+      </View>
     );
   }, [data, isLoading]);
 
   useEffect(() => {
     gettApi();
     return () => {
-setData([])
-    }
+      setData([]);
+    };
   }, []);
-
 
   if (isLoading) {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <ActivityIndicator />
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        <ActivityIndicator size={50} />
       </View>
     );
   }

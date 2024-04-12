@@ -1,0 +1,40 @@
+{
+  "user": [
+    {
+      "id": "affd",
+      "name": "Kartik",
+      "age": "22",
+      "email": "kartik@gmail.com"
+    },
+    {
+      "id": "9e95",
+      "name": "Kartik",
+      "age": "22",
+      "email": "kartik@gmail.com"
+    },
+    {
+      "id": "dc8c",
+      "name": "Kartik",
+      "age": "22",
+      "email": "kartik@gmail.com"
+    },
+    {
+      "id": "dfb7",
+      "name": "Kartik",
+      "age": "22",
+      "email": "kartik@gmail.com"
+    },
+    {
+      "id": "2952",
+      "name": "Kartik",
+      "age": "22",
+      "email": "kartik@gmail.com"
+    },
+    {
+      "id": "54f0",
+      "name": "Kartik",
+      "age": "22",
+      "email": "kartik@gmail.com"
+    }
+  ]
+}
