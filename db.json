@@ -1,40 +1,22 @@
 {
   "user": [
     {
-      "id": "affd",
       "name": "Kartik",
+      "email": "kartik@gmail.com",
       "age": "22",
-      "email": "kartik@gmail.com"
+      "id": "3"
     },
     {
-      "id": "9e95",
-      "name": "Kartik",
-      "age": "22",
-      "email": "kartik@gmail.com"
+      "id": "4",
+      "name": "Tushar",
+      "age": "20",
+      "email": "tushar@gmail.com"
     },
     {
-      "id": "dc8c",
-      "name": "Kartik",
-      "age": "22",
-      "email": "kartik@gmail.com"
-    },
-    {
-      "id": "dfb7",
-      "name": "Kartik",
-      "age": "22",
-      "email": "kartik@gmail.com"
-    },
-    {
-      "id": "2952",
-      "name": "Kartik",
-      "age": "22",
-      "email": "kartik@gmail.com"
-    },
-    {
-      "id": "54f0",
-      "name": "Kartik",
-      "age": "22",
-      "email": "kartik@gmail.com"
+      "id": "5",
+      "name": "Abhimanyu",
+      "age": "21",
+      "email": "Abhimanyu@gmail.com"
     }
   ]
 }
